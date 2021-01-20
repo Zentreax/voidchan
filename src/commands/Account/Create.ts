@@ -29,18 +29,18 @@ export default class PingCommand extends Command {
 			.setTitle("Your account information")
 			.addField("Your API key", newAccount.id)
 			.setDescription(`(Copy and paste to import it!) ShareX .sxcu File:\n\`\`\`json\n{
-	"Version": "13.3.0",
-	"Name": "VoidChan",
-	"DestinationType": "ImageUploader",
-	"RequestMethod": "POST",
-	"RequestURL": "https://${process.env.HOSTNAME}/api/providers/sharex",
-	"Headers": {
-		"Authorization": "${newAccount.id}"
-	},
-	"Body": "MultipartFormData",
-	"FileFormName": "file",
-	"URL": "$json:files[0].url$"
-}\`\`\``);
+			"Version": "13.3.0",
+			"Name": "VoidChan",
+			"DestinationType": "ImageUploader",
+			"RequestMethod": "POST",
+			"RequestURL": "https://${process.env.HOSTNAME}/api/providers/sharex",
+			"Headers": {
+				"Authorization": "${newAccount.id}"
+			},
+			"Body": "MultipartFormData",
+			"FileFormName": "file",
+			"URL": "$json:files[0].url$"
+			}\`\`\``);
 
 		try {
 			await message.author.send({ embed });
